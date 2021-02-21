@@ -1,35 +1,41 @@
 import * as React from "react";
 import Button from "./components/Button";
 import SkipLink from "./components/SkipLink";
+import Nav from "./Nav";
 
 const App = () => (
   <>
     <SkipLink href="#main">Перейти к основному контенту</SkipLink>
-    <nav />
-    <main>
-      <h1>Государственный музей изобразительных искусств имени А.С. Пушкина</h1>
+    <Nav />
+    <main id="main" role="main">
+      <h1 className="visually-hidden">
+        Государственный музей изобразительных искусств имени А.С. Пушкина
+      </h1>
 
       <a href="#about">Музей</a>
       <a href="#visitors">Посетителям</a>
       <a href="#events">Выставки и события</a>
 
-      <section>
+      <section aria-labelledby="highlights">
+        <h2 id="highlights" className="visually-hidden">
+          Что нового
+        </h2>
         <Button variant="primary">Купить билет</Button>
         <Button variant="primary">Стать другом</Button>
         <Button variant="primary">Онлайн-магазин</Button>
       </section>
 
-      <section>
-        <h2>Выставки и события</h2>
+      <section aria-labelledby="events">
+        <h2 id="events">Выставки и события</h2>
       </section>
-      <section>
-        <h2>Музей</h2>
+      <section aria-labelledby="about">
+        <h2 id="about">Музей</h2>
       </section>
-      <section>
-        <h2>Онлайн-трансляции</h2>
+      <section aria-labelledby="videos">
+        <h2 id="videos">Онлайн-трансляции</h2>
       </section>
-      <section>
-        <h2>Экскурсии и лекции в прямом эфире</h2>
+      <section aria-labelledby="online-events">
+        <h2 id="online-events">Экскурсии и лекции в прямом эфире</h2>
         <p>
           Вы можете присоединиться к нашим виртуальным мероприятиям — экскурсиям
           и лекциям для взрослых и детей, оплатив участие на сайте. Встречи

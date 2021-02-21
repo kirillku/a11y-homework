@@ -1,13 +1,9 @@
 import styled, { css } from "styled-components";
 import { readableColor } from "polished";
-
-const ButtonColor = {
-  secondary: "#c7d2e9",
-  primary: "#5D16D5",
-};
+import theme from "../theme";
 
 const buttonBgColor = (props) =>
-  props.variant === "primary" ? ButtonColor.primary : ButtonColor.secondary;
+  props.variant === "primary" ? theme.primary : theme.secondary;
 
 const buttonColor = (props) => readableColor(buttonBgColor(props));
 
@@ -18,7 +14,7 @@ export const buttonStyles = css`
   border: 1px solid ${buttonBgColor};
   color: ${buttonColor};
   border-radius: 8px;
-  padding: 0.75em 2em;
+  padding: ${(props) => (props.compact ? "0.75em" : "0.75em 2em")};
 `;
 
 const Button = styled.button`
