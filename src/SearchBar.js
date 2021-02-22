@@ -27,9 +27,8 @@ const SubmitButton = styled.button`
 `;
 
 const SearchInput = styled.input`
-  background: #f9f9fb;
+  background: ${theme.inputBg};
   border: 1px solid ${theme.secondary};
-  box-sizing: border-box;
   border-radius: 50px;
   height: 100%;
   width: 100%;
