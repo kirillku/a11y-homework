@@ -1,9 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
-import Button from "./components/Button";
 import IconButton from "./components/IconButton";
 import UserIcon from "./components/UserIcon";
+import LanguageSwith from "./LanguageSwitch";
 import LoginDialog from "./LoginDialog";
+import SearchBar from "./SearchBar";
 import theme from "./theme";
 
 const StyledHeader = styled.header`
@@ -16,6 +17,13 @@ const TopHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
+
+const Controls = styled.div`
+  display: flex;
+  align-items: stretch;
+  height: 50px;
+  justify-content: flex-end;
 `;
 
 const StyledNav = styled.nav`
@@ -38,13 +46,18 @@ const Header = () => {
   return (
     <StyledHeader>
       <TopHeader>
-        <div style={{ width: 300, height: 50, background: "pink" }}>LOGO</div>
-        <Button compact>RU</Button>
-        <Button compact>EN</Button>
-        <IconButton onClick={() => setOpen(true)}>
-          <UserIcon aria-label="Аккаунт" />
-        </IconButton>
-        <LoginDialog open={open} onClose={() => setOpen(false)} />
+        <img
+          src="logo_gmii.svg"
+          alt="Государственный музей изобразительных искусств имени А.С. Пушкина"
+        />
+        <Controls>
+          <SearchBar />
+          <LanguageSwith />
+          <IconButton onClick={() => setOpen(true)}>
+            <UserIcon aria-label="Аккаунт" />
+          </IconButton>
+          <LoginDialog open={open} onClose={() => setOpen(false)} />
+        </Controls>
       </TopHeader>
 
       <StyledNav>
