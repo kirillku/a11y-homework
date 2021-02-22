@@ -1,5 +1,4 @@
 import * as React from "react";
-import styled from "styled-components";
 import {
   Cards,
   Card,
@@ -7,6 +6,7 @@ import {
   CardTitle,
   CardDescription,
 } from "./components/cards";
+import Link from "./components/Link";
 
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "./components/tabs";
 import { getCurrentLocale } from "./LanguageSwitch";
@@ -66,7 +66,7 @@ const EventCards = ({ events }) => (
         </CardDescription>
         <CardDescription>{event.description}</CardDescription>
         <CardDescription>
-          <a href={event.link}>Купить билет</a>
+          <Link href={event.link}>Купить билет</Link>
         </CardDescription>
       </Card>
     ))}

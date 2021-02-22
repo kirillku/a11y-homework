@@ -1,6 +1,55 @@
 import * as React from "react";
-import styled from "styled-components";
+import {
+  Card,
+  CardDescription,
+  CardImg,
+  Cards,
+  CardTitle,
+} from "./components/cards";
+import Link from "./components/Link";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "./components/tabs";
+
+const getRandomImg = () =>
+  `https://placeimg.com/200/100/arch/grayscale?${Math.random()}`;
+
+const BUILDINGS = [
+  {
+    title: "Мемориальная Квартира С.Т. Рихтера",
+    img: getRandomImg(),
+    address: "ул. Большая Бронная, 2/6, 16 этаж, кв. 58",
+    link: "#404",
+  },
+  {
+    title: "ЦЭВ «Мусейон»",
+    img: getRandomImg(),
+    address: "Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)",
+    link: "#404",
+  },
+  {
+    title: "Усадьба Лопухиных",
+    img: getRandomImg(),
+    address: "Малый Знаменский пер., 3/5с4",
+    link: "#404",
+  },
+  {
+    title: "Учебный Музей",
+    img: getRandomImg(),
+    address: "ул. Чаянова, 15",
+    link: "#404",
+  },
+  {
+    title: "Отдел Личных Коллекций",
+    img: getRandomImg(),
+    address: "ул. Волхонка, 10",
+    link: "#404",
+  },
+  {
+    title: "Галерея",
+    img: getRandomImg(),
+    address: "ул. Волхонка, 14",
+    link: "#404",
+  },
+];
 
 const AboutSection = () => (
   <section aria-labelledby="about">
@@ -13,7 +62,18 @@ const AboutSection = () => (
       </TabList>
       <TabPanels>
         <TabPanel>
-          <p>one!</p>
+          <Cards>
+            {BUILDINGS.map((building) => (
+              <Card key={building.title}>
+                <CardImg src={building.img} alt={building.title} />
+                <CardTitle uppercase>{building.title}</CardTitle>
+                <CardDescription>{building.address}</CardDescription>
+                <CardDescription>
+                  <Link href={building.link}>Подробнее</Link>
+                </CardDescription>
+              </Card>
+            ))}
+          </Cards>
         </TabPanel>
         <TabPanel>
           <p>

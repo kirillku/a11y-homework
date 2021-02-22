@@ -18,7 +18,9 @@ export const CardImg = styled.img`
   width: 100%;
 `;
 
-export const CardTitle = styled.h3``;
+export const CardTitle = styled.h3`
+  text-transform: ${(p) => p.uppercase && "uppercase"};
+`;
 
 export const CardDescription = styled.p`
   font-size: 1em;
