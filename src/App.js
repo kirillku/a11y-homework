@@ -1,8 +1,17 @@
 import * as React from "react";
+import styled from "styled-components";
 import Button from "./components/Button";
 import SkipLink from "./components/SkipLink";
 import Footer from "./Footer";
 import Header from "./Header";
+
+const HighlightsButtons = styled.div`
+  margin-top: 50px;
+
+  button {
+    margin-right: 2em;
+  }
+`;
 
 const App = () => (
   <>
@@ -27,15 +36,17 @@ const App = () => (
         >
           CARUSEL
         </div>
-        <Button variant="primary" size="small">
-          Купить билет
-        </Button>
-        <Button variant="primary" size="small">
-          Стать другом
-        </Button>
-        <Button variant="primary" size="small">
-          Онлайн-магазин
-        </Button>
+        <HighlightsButtons>
+          <Button variant="primary" size="small">
+            Купить билет
+          </Button>
+          <Button variant="primary" size="small">
+            Стать другом
+          </Button>
+          <Button variant="primary" size="small">
+            Онлайн-магазин
+          </Button>
+        </HighlightsButtons>
       </section>
 
       <section aria-labelledby="events">
