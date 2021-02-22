@@ -1,7 +1,77 @@
 import * as React from "react";
 import styled from "styled-components";
+import {
+  Cards,
+  Card,
+  CardImg,
+  CardTitle,
+  CardDescription,
+} from "./components/cards";
 
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "./components/tabs";
+import { getCurrentLocale } from "./LanguageSwitch";
+
+const getRandomImg = () => `https://picsum.photos/200/100?${Math.random()}`;
+
+const today = new Date();
+const tomorrow = new Date().setDate(today.getDate() + 1);
+
+const DATE_FORMAT_OPTIONS = {
+  month: "long",
+  day: "numeric",
+};
+
+const EVENTS = [
+  {
+    title: "Святослав Рихтер в кругу друзей. Москва — Коктебель",
+    img: getRandomImg(),
+    description:
+      "Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст",
+    until: today.toISOString().substring(0, 10),
+    link: "#404",
+  },
+  {
+    title: "Тату",
+    img: getRandomImg(),
+    description:
+      "Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст",
+    until: "2021-10-26",
+    link: "#404",
+  },
+  {
+    title:
+      "От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина",
+    img: getRandomImg(),
+    description:
+      "Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст",
+    until: "2021-04-12",
+    link: "#404",
+  },
+];
+
+const EventCards = ({ events }) => (
+  <Cards>
+    {events.map((event) => (
+      <Card key={event.title}>
+        <CardImg src={event.img} alt={event.title} />
+        <CardTitle>{event.title}</CardTitle>
+        <CardDescription>
+          Выставка до{" "}
+          <time dateTime={new Date(event.until).toISOString()}>
+            {new Date(event.until).toLocaleDateString(
+              getCurrentLocale(),
+              DATE_FORMAT_OPTIONS
+            )}
+          </time>
+        </CardDescription>
+        <CardDescription>{event.description}</CardDescription>
+        <CardDescription>
+          <a href={event.link}>Купить билет</a>
+        </CardDescription>
+      </Card>
+    ))}
+  </Cards>
+);
 
 const EventsSection = () => (
   <section aria-labelledby="events">
@@ -15,13 +85,21 @@ const EventsSection = () => (
       </TabList>
       <TabPanels>
         <TabPanel>
-          <p>one!</p>
+          <EventCards events={EVENTS} />
         </TabPanel>
         <TabPanel>
-          <p>two!</p>
+          <EventCards
+            events={EVENTS.filter(
+              (event) => new Date(event.until) - today >= 0
+            )}
+          />
         </TabPanel>
         <TabPanel>
-          <p>three!</p>
+          <EventCards
+            events={EVENTS.filter(
+              (event) => new Date(event.until) - tomorrow >= 0
+            )}
+          />
         </TabPanel>
       </TabPanels>
     </Tabs>

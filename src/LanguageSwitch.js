@@ -24,8 +24,12 @@ const LOCALES = [
   { value: "en", label: "English", href: "/en" },
 ];
 
+export const getCurrentLocale = () =>
+  window.location.pathname.includes("/en") ? "en" : "ru";
+
 const LanguageSwith = () => {
-  const currentLocale = window.location.pathname.includes("/en") ? "en" : "ru";
+  const currentLocale = getCurrentLocale();
+
   return (
     <Wrapper>
       {LOCALES.map((locale) => {

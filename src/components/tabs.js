@@ -12,6 +12,7 @@ import { buttonStyles } from "./Button";
 export const Tabs = styled(ReachTabs)`
   [data-reach-tab-list] {
     background: none;
+    margin-bottom: 50px;
   }
 
   [data-reach-tab] {
