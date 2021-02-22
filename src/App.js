@@ -1,7 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
+import AboutSection from "./AboutSection";
 import Button from "./components/Button";
 import SkipLink from "./components/SkipLink";
+import EventsSection from "./EventsSection";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -49,12 +51,8 @@ const App = () => (
         </HighlightsButtons>
       </section>
 
-      <section aria-labelledby="events">
-        <h2 id="events">Выставки и события</h2>
-      </section>
-      <section aria-labelledby="about">
-        <h2 id="about">Музей</h2>
-      </section>
+      <EventsSection />
+      <AboutSection />
       <section aria-labelledby="videos">
         <h2 id="videos">Онлайн-трансляции</h2>
         <iframe
