@@ -6,11 +6,11 @@ const SkipLink = styled.a`
 
   position: absolute;
   top: -200px;
-  left: 2px;
+  left: calc(50% - 500px);
   transition: top 0.2s;
 
   :focus {
-    top: 20px;
+    top: 40px;
   }
 `;
 

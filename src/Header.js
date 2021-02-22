@@ -40,13 +40,17 @@ const StyledNav = styled.nav`
   }
 `;
 
+const Logo = styled.img`
+  max-width: 200px;
+`;
+
 const Header = () => {
   const [open, setOpen] = React.useState(false);
 
   return (
     <StyledHeader>
       <TopHeader>
-        <img
+        <Logo
           src="logo_gmii.svg"
           alt="Государственный музей изобразительных искусств имени А.С. Пушкина"
         />
