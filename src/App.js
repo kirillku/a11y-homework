@@ -46,6 +46,16 @@ const App = () => (
       </section>
       <section aria-labelledby="videos">
         <h2 id="videos">Онлайн-трансляции</h2>
+        <iframe
+          width={1000}
+          height={1000 / (16 / 9)}
+          src="https://www.youtube.com/embed/5qRR-5H1XgU"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Ай Вейвей: движение к общечеловеческому"
+          aria-label="Ай Вейвей: движение к общечеловеческому"
+        />
       </section>
       <section aria-labelledby="online-events">
         <h2 id="online-events">Экскурсии и лекции в прямом эфире</h2>

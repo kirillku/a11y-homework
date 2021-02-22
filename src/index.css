@@ -8,6 +8,10 @@ main {
   max-width: 1000px;
 }
 
+main > section {
+  margin-bottom: 120px;
+}
+
 h1,
 h2 {
   font-size: 2em;
@@ -20,6 +24,7 @@ button:not(:disabled) {
 
 p {
   max-width: 700px;
+  font-size: 1.25em;
 }
 
 .visually-hidden {

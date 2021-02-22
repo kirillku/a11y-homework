@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { tint, readableColor, size } from "polished";
+import { tint, readableColor } from "polished";
 import theme from "../theme";
 
 const getBgColor = (props) =>
