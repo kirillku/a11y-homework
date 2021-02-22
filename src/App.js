@@ -27,9 +27,15 @@ const App = () => (
         >
           CARUSEL
         </div>
-        <Button variant="primary">Купить билет</Button>
-        <Button variant="primary">Стать другом</Button>
-        <Button variant="primary">Онлайн-магазин</Button>
+        <Button variant="primary" size="small">
+          Купить билет
+        </Button>
+        <Button variant="primary" size="small">
+          Стать другом
+        </Button>
+        <Button variant="primary" size="small">
+          Онлайн-магазин
+        </Button>
       </section>
 
       <section aria-labelledby="events">

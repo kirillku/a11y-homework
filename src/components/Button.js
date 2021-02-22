@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { tint, readableColor } from "polished";
+import { tint, readableColor, size } from "polished";
 import theme from "../theme";
 
 const getBgColor = (props) =>
@@ -13,7 +13,8 @@ export const buttonStyles = css`
   border: 1px solid ${getBgColor};
   color: ${(props) => readableColor(getBgColor(props))};
   border-radius: 8px;
-  padding: 0.75em 2em;
+  padding: ${(props) =>
+    props.size === "small" ? "0.25em 1.5em" : "0.75em 2em"};
   text-align: center;
 
   :hover:not(:disabled),

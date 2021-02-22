@@ -1,16 +1,21 @@
 import * as React from "react";
 import styled from "styled-components";
-import Button from "./components/Button";
 import EmailIcon from "./components/EmailIcon";
 import FacebookIcon from "./components/FacebookIcon";
 import IconButton from "./components/IconButton";
 import TelegramIcon from "./components/TelegramIcon";
+import NewsletterForm from "./NewsletterForm";
 import theme from "./theme";
 
 const StyledFooter = styled.footer`
   background: #f1f1f1;
   height: 400px;
   padding: 80px 0;
+
+  h1,
+  h2 {
+    font-size: 1.5em;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -97,21 +102,7 @@ const Footer = () => (
       </SocialLinksSection>
       <NewsletterSection aria-labelledby="newsletter">
         <h2 id="newsletter">Подписка на новости</h2>
-        <form onSubmit={(event) => event.preventDefault()}>
-          <div>
-            <label>
-              E-mail
-              <input name="email" />
-            </label>
-            <label>
-              <input type="checkbox" />
-              Согласен на обработку персональх данных
-            </label>
-          </div>
-          <Button variant="primary" type="submit">
-            Подписаться
-          </Button>
-        </form>
+        <NewsletterForm />
       </NewsletterSection>
     </Wrapper>
   </StyledFooter>
