@@ -15,6 +15,11 @@ const HighlightsButtons = styled.div`
   }
 `;
 
+const CaruselImg = styled.img`
+  width: 100%;
+  height: 600px;
+`;
+
 const App = () => (
   <>
     <SkipLink href="#main">Перейти к основному контенту</SkipLink>
@@ -28,16 +33,10 @@ const App = () => (
         <h2 id="highlights" className="visually-hidden">
           Что нового
         </h2>
-        <div
-          style={{
-            width: "100%",
-            height: 600,
-            border: "1px solid orange",
-            background: "wheat",
-          }}
-        >
-          CARUSEL
-        </div>
+        <CaruselImg
+          src="https://pushkinmuseum.art/inc/mainblocks/media/15506_img_pc.jpg"
+          alt="WIP: Carusel"
+        />
         <HighlightsButtons>
           <Button variant="primary" size="small">
             Купить билет
